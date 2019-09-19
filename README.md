@@ -34,3 +34,42 @@ $ python3 project.py local dorkgithubrsakey "bank" "field1=field1 value#field2=f
 ~~~
 
 The above will run the transform named `dorkgithubrsakey`, which we can see in the list maps to the DorkGithubRsaKey class. This class requires a search term, which in the example above is the string `bank`. It also needs to have some values and fields for the response object, which are provided in the second parameter.
+
+## Running a Debug-Mode Transform Server
+
+You can run a debug mode transform server by using the `runserver` function. This will start up a flask application that provides mappings to the transforms available:
+
+~~~shell
+$ python3 project.py runserver
+
+=== Maltego Transform Server: v1.3.4 ===
+
+= Transform Server URLs =
+/run/dorkgithubrsakey/: DorkGithubRsaKey
+
+
+= Local Transform Names =
+dorkgithubrsakey: DorkGithubRsaKey
+
+
+ * Serving Flask app "maltego_trx.server" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+INFO:werkzeug: * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+
+=== Maltego Transform Server: v1.3.4 ===
+
+= Transform Server URLs =
+/run/dorkgithubrsakey/: DorkGithubRsaKey
+
+
+= Local Transform Names =
+dorkgithubrsakey: DorkGithubRsaKey
+
+
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 133-700-303
+~~~
